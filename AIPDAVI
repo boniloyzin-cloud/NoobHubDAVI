@@ -1,0 +1,190 @@
+-- ==========================================
+-- DAVI_HUB | Key & Loader Script (50 Player Whitelist)
+-- Telegram Contact: TAVI_KDMH
+-- ==========================================
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+-- ==========================================
+-- 1. WHITELIST PROTECTION (50 PLAYERS)
+-- ==========================================
+local WhitelistedUsers = {
+    ["DAVI_KDMH"] = true,     -- ឈ្មោះទី ១ (របស់អ្នក)
+    ["BuyerUsername2"] = true,
+    ["BuyerUsername3"] = true,
+    ["BuyerUsername4"] = true,
+    ["BuyerUsername5"] = true,
+    ["BuyerUsername6"] = true,
+    ["BuyerUsername7"] = true,
+    ["BuyerUsername8"] = true,
+    ["BuyerUsername9"] = true,
+    ["BuyerUsername10"] = true,
+    ["BuyerUsername11"] = true,
+    ["BuyerUsername12"] = true,
+    ["BuyerUsername13"] = true,
+    ["BuyerUsername14"] = true,
+    ["BuyerUsername15"] = true,
+    ["BuyerUsername16"] = true,
+    ["BuyerUsername17"] = true,
+    ["BuyerUsername18"] = true,
+    ["BuyerUsername19"] = true,
+    ["BuyerUsername20"] = true,
+    ["BuyerUsername21"] = true,
+    ["BuyerUsername22"] = true,
+    ["BuyerUsername23"] = true,
+    ["BuyerUsername24"] = true,
+    ["BuyerUsername25"] = true,
+    ["BuyerUsername26"] = true,
+    ["BuyerUsername27"] = true,
+    ["BuyerUsername28"] = true,
+    ["BuyerUsername29"] = true,
+    ["BuyerUsername30"] = true,
+    ["BuyerUsername31"] = true,
+    ["BuyerUsername32"] = true,
+    ["BuyerUsername33"] = true,
+    ["BuyerUsername34"] = true,
+    ["BuyerUsername35"] = true,
+    ["BuyerUsername36"] = true,
+    ["BuyerUsername37"] = true,
+    ["BuyerUsername38"] = true,
+    ["BuyerUsername39"] = true,
+    ["BuyerUsername40"] = true,
+    ["BuyerUsername41"] = true,
+    ["BuyerUsername42"] = true,
+    ["BuyerUsername43"] = true,
+    ["BuyerUsername44"] = true,
+    ["BuyerUsername45"] = true,
+    ["BuyerUsername46"] = true,
+    ["BuyerUsername47"] = true,
+    ["BuyerUsername48"] = true,
+    ["BuyerUsername49"] = true,
+    ["BuyerUsername50"] = true,
+}
+
+-- Check if player is whitelisted
+if not WhitelistedUsers[LocalPlayer.Name] then
+    LocalPlayer:Kick("\n[ DAVI HUB SECURITY ]\n\nYou are not whitelisted!\nPlease Telegram: TAVI_KDMH to buy script.")
+    return
+end
+
+-- ==========================================
+-- 2. FULL-SCREEN DARK / LIGHT LOADING SCREEN
+-- ==========================================
+local ScreenGui = Instance.new("ScreenGui")
+local BackgroundFrame = Instance.new("Frame")
+local TitleLabel = Instance.new("TextLabel")
+local SubtitleLabel = Instance.new("TextLabel")
+
+local ProgressBarBackground = Instance.new("Frame")
+local BarBackCorner = Instance.new("UICorner")
+local ProgressBarFill = Instance.new("Frame")
+local BarFillCorner = Instance.new("UICorner")
+
+local PercentageLabel = Instance.new("TextLabel")
+local StatusText = Instance.new("TextLabel")
+
+-- Setup UI Hierarchy
+ScreenGui.Parent = (game:GetService("CoreGui") or LocalPlayer:WaitForChild("PlayerGui"))
+ScreenGui.Name = "DaviHubLoadingScreen"
+ScreenGui.ResetOnSpawn = false
+
+-- Full-Screen Dark Background
+BackgroundFrame.Name = "BackgroundFrame"
+BackgroundFrame.Parent = ScreenGui
+BackgroundFrame.BackgroundColor3 = Color3.fromRGB(12, 12, 16)
+BackgroundFrame.Size = UDim2.new(1, 0, 1, 0)
+BackgroundFrame.Position = UDim2.new(0, 0, 0, 0)
+BackgroundFrame.Active = true
+
+-- Title
+TitleLabel.Name = "TitleLabel"
+TitleLabel.Parent = BackgroundFrame
+TitleLabel.BackgroundTransparency = 1.000
+TitleLabel.Position = UDim2.new(0, 0, 0.3, 0)
+TitleLabel.Size = UDim2.new(1, 0, 0, 50)
+TitleLabel.Font = Enum.Font.SourceSansBold
+TitleLabel.Text = "DAVI HUB"
+TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleLabel.TextSize = 42.000
+
+-- Subtitle
+SubtitleLabel.Name = "SubtitleLabel"
+SubtitleLabel.Parent = BackgroundFrame
+SubtitleLabel.BackgroundTransparency = 1.000
+SubtitleLabel.Position = UDim2.new(0, 0, 0.38, 0)
+SubtitleLabel.Size = UDim2.new(1, 0, 0, 25)
+SubtitleLabel.Font = Enum.Font.SourceSans
+SubtitleLabel.Text = "TELEGRAM: TAVI_KDMH"
+SubtitleLabel.TextColor3 = Color3.fromRGB(0, 210, 255)
+SubtitleLabel.TextSize = 18.000
+
+-- Progress Bar Outer Container
+ProgressBarBackground.Name = "ProgressBarBackground"
+ProgressBarBackground.Parent = BackgroundFrame
+ProgressBarBackground.BackgroundColor3 = Color3.fromRGB(28, 30, 40)
+ProgressBarBackground.Position = UDim2.new(0.5, -200, 0.52, 0)
+ProgressBarBackground.Size = UDim2.new(0, 400, 0, 20)
+
+BarBackCorner.CornerRadius = UDim.new(0, 10)
+BarBackCorner.Parent = ProgressBarBackground
+
+-- Progress Bar Inner Light Accent Fill
+ProgressBarFill.Name = "ProgressBarFill"
+ProgressBarFill.Parent = ProgressBarBackground
+ProgressBarFill.BackgroundColor3 = Color3.fromRGB(0, 210, 255)
+ProgressBarFill.Size = UDim2.new(0, 0, 1, 0)
+
+BarFillCorner.CornerRadius = UDim.new(0, 10)
+BarFillCorner.Parent = ProgressBarFill
+
+-- Percentage Display
+PercentageLabel.Name = "PercentageLabel"
+PercentageLabel.Parent = BackgroundFrame
+PercentageLabel.BackgroundTransparency = 1.000
+PercentageLabel.Position = UDim2.new(0, 0, 0.57, 0)
+PercentageLabel.Size = UDim2.new(1, 0, 0, 30)
+PercentageLabel.Font = Enum.Font.SourceSansBold
+PercentageLabel.Text = "0%"
+PercentageLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+PercentageLabel.TextSize = 20.000
+
+-- Status Text Below Loader
+StatusText.Name = "StatusText"
+StatusText.Parent = BackgroundFrame
+StatusText.BackgroundTransparency = 1.000
+StatusText.Position = UDim2.new(0, 0, 0.63, 0)
+StatusText.Size = UDim2.new(1, 0, 0, 30)
+StatusText.Font = Enum.Font.SourceSansBold
+StatusText.Text = "Loading system modules..."
+StatusText.TextColor3 = Color3.fromRGB(160, 160, 180)
+StatusText.TextSize = 16.000
+
+-- ==========================================
+-- 3. ANIMATED 1-100% LOADING PROGRESS
+-- ==========================================
+for i = 1, 100 do
+    ProgressBarFill.Size = UDim2.new(i / 100, 0, 1, 0)
+    PercentageLabel.Text = tostring(i) .. "%"
+
+    if i == 50 then
+        StatusText.Text = "Verifying Whitelist..."
+    elseif i == 90 then
+        StatusText.Text = "Finalizing..."
+    end
+
+    task.wait(0.02)
+end
+
+-- Completion Message
+StatusText.Text = "NOOB HUB DAVI HUB OPEN✅"
+StatusText.TextColor3 = Color3.fromRGB(100, 255, 150)
+PercentageLabel.Text = "100%"
+
+task.wait(1.5)
+ScreenGui:Destroy()
+
+-- ==========================================
+-- 4. EXECUTE MAIN SCRIPT
+-- ==========================================
+loadstring(game:HttpGet("https://raw.githubusercontent.com/boniloyzin-cloud/Noobhub-DAVI/refs/heads/main/DAVIFTAP"))()
